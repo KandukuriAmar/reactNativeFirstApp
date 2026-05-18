@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { router } from 'expo-router';
-import {AuthProvider} from '../../state-management/AuthContext';
 
 const styles = StyleSheet.create({
   layout: {
@@ -21,9 +20,9 @@ const styles = StyleSheet.create({
 });
 
 
-const App = () => {
+const Home = () => {
     return(
-            <View style={styles.layout}>
+        <View style={styles.layout}>
             <Image source={{uri: "https://media.tenor.com/cRTQk6N_FxMAAAAM/swag-cat-swagbilli-cutecat-cats-cat-swag-ok-yooo-yo.gif"}} style={styles.image}/>
             <Text style={styles.text}>Hello Home</Text>
             <Text style={styles.text}>dhummu lechipodhi</Text>
@@ -31,15 +30,9 @@ const App = () => {
                 router.push("/contact");
             }}>
                 <Text style={styles.text}>Contact</Text>
-            </TouchableOpacity>
+            </TouchableOpacity><br/>
 
-            <TouchableOpacity
-                style={{
-                    backgroundColor: "lightgray",
-                    padding: 10,
-                    borderRadius: 5,
-                    marginBottom: 10
-                }} onPress={(e) => {
+            <TouchableOpacity style={{backgroundColor: "lightgray", padding: 10, borderRadius: 5}} onPress={(e) => {
                 router.push("/about");
             }}>
                 <Text style={styles.text}>About</Text>
@@ -48,4 +41,4 @@ const App = () => {
     );
 }
 
-export default App;
+export default Home;
